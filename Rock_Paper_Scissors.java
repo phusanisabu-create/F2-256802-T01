@@ -14,11 +14,9 @@ public class Rock_Paper_Scissors {
 
         while (PlayAgain) 
         {
-            //Get input player
             System.out.print("Enter Rock/Paper/Scissors: ");
             String player = sc.nextLine().toLowerCase();
 
-            //Error
             if (!player.equals("rock") && 
                 !player.equals("paper") && 
                 !player.equals("scissors")) 
@@ -27,12 +25,11 @@ public class Rock_Paper_Scissors {
                 continue;
             }
 
-            //RANDOM
-            String computer = options[rand.nextInt(3)]; // สุ่ม rock paper scissors
+            String computer = options[rand.nextInt(3)]; 
             System.out.println("Computer chose: " + computer);
 
             //Result
-            if (player.equals(computer)) // คำตอบเหมือนกัน
+            if (player.equals(computer))
             {
                 System.out.println("You Draw");
                 candy += 2;
@@ -48,7 +45,6 @@ public class Rock_Paper_Scissors {
                 System.out.println("Computer Wins");
                 candy += 0;
 
-            //Play again
             boolean Vaid_answer = false;
             while (!Vaid_answer) 
             {
@@ -56,17 +52,17 @@ public class Rock_Paper_Scissors {
                 String answer = sc.nextLine().toLowerCase();
                 if (!answer.equals("yes") && !answer.equals("no")) 
                 {
-                    System.out.println("Invalid input"); //ถ้าคำตอบไม่เท่ากับ  yes หรือ no
+                    System.out.println("Invalid input");
                     continue;
                 }
                 if (answer.equals("yes"))
                 {
-                    Vaid_answer = true; //ออกจากลูป vaid_answer และ เล่นเกมต่อ
+                    Vaid_answer = true;
                 }
                 else if (answer.equals("no"))
                 {
-                    PlayAgain = false; //เกมจะถูกหยุด
-                    Vaid_answer = true;//ออกจากลูป vaid_answer
+                    PlayAgain = false;
+                    Vaid_answer = true;
                 }
             }
             
